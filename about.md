@@ -1,9 +1,6 @@
----
-layout: about  # 用这个about.html模板
-title: 关于我
-description: 一个正在学GitHub建站的新手
----
+# 关于我
+大家好，我是XXX！
 
-<!--author-->
+这是我的第一个about页面，没有复杂的布局，直接显示文字～
 
-大家好，我是XXX，正在学习用Hydejack搭建个人网站～
+- 学习方向：GitHub建站、HTML/CSS
