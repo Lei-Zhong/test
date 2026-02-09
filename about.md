@@ -1,6 +1,9 @@
+---
+layout: simple  # 用我们刚写的极简布局
+title: 关于我
+---
+
 # 关于我
 大家好，我是XXX！
 
-这是我的第一个about页面，没有复杂的布局，直接显示文字～
-
-- 学习方向：GitHub建站、HTML/CSS
+这是用极简布局做的about页面，样式和index.html一致～
