@@ -1,32 +1,36 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <title>我的第一个GitHub个人网站</title>
-    <!-- 简单样式，让页面不那么丑 -->
-    <style>
-        body {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 20px;
-            font-family: Arial, 微软雅黑;
-        }
-        h1 {
-            color: #2c3e50;
-        }
-        .info {
-            margin-top: 30px;
-            line-height: 1.8;
-            color: #34495e;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>你的名字 - 首页</title>
+  <!-- 引用共用样式文件 -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>你好，我是XXX（你的名字）</h1>
-    <div class="info">
-        <p>这是我用GitHub Pages搭建的第一个个人网站！</p>
-        <p>我的GitHub：<a href="https://github.com/你的用户名">@你的用户名</a></p>
-        <p>我的简介：（这里可以写你的爱好、学习方向等）</p>
+  <!-- 顶部导航（所有页面都有） -->
+  <nav class="top-nav">
+    <div class="container">
+      <a href="index.html" class="logo">你的名字</a>
+      <div>
+        <a href="index.html">首页</a>
+        <a href="about.html">关于我</a>
+        <a href="projects.html">我的项目</a>
+        <a href="resume.html">简历</a>
+      </div>
     </div>
+  </nav>
+
+  <!-- 首页核心区域（简洁风，Hydejack同款） -->
+  <div class="hero">
+    <div class="overlay">
+      <h1>你的名字</h1>
+      <p>一句话简介，比如：前端学习者 / 热爱分享</p>
+      <div class="links">
+        <a href="mailto:你的邮箱@xxx.com">邮箱</a>
+        <a href="https://linkedin.com/in/你的领英">领英</a>
+        <a href="https://github.com/你的用户名">GitHub</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
