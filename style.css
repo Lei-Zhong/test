@@ -1,0 +1,112 @@
+/* 全局样式（所有页面通用） */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "微软雅黑", "思源黑体", Arial, sans-serif;
+}
+
+/* 页面背景+正文居中 */
+body {
+  background-color: #ffffff;
+  color: #333333;
+  line-height: 1.8;
+}
+
+/* 容器：让内容居中，不挤边 */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 顶部导航栏（Hydejack风格） */
+.top-nav {
+  background-color: rgb(79,177,186); /* Hydejack主色 */
+  color: white;
+  padding: 15px 0;
+  position: fixed; /* 固定在顶部 */
+  top: 0;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+.top-nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
+.top-nav a:hover {
+  text-decoration: underline;
+}
+.top-nav .logo {
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 0;
+}
+
+/* 页面内容：避开顶部导航，不被挡住 */
+.page-content {
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+
+/* 标题样式（贴近Hydejack） */
+h1 {
+  color: rgb(8,46,57); /* Hydejack辅助色 */
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+h2 {
+  color: rgb(8,46,57);
+  margin: 25px 0 15px;
+  font-size: 24px;
+}
+
+/* 链接样式 */
+a {
+  color: rgb(79,177,186);
+}
+
+/* 首页hero区域（简洁风，贴近Hydejack首页） */
+.hero {
+  height: 100vh; /* 占满屏幕 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("https://picsum.photos/1920/1080") no-repeat center center; /* 背景图，可换 */
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+.hero .overlay {
+  background: rgba(0,0,0,0.5); /* 背景半透明，文字更清晰 */
+  padding: 50px;
+  border-radius: 10px;
+}
+.hero h1 {
+  color: white;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.hero .links a {
+  color: white;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 0 10px;
+  text-decoration: none;
+}
+.hero .links a:hover {
+  background-color: white;
+  color: rgb(79,177,186);
+}
