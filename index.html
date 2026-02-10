@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN" class="zh">
+<html lang="en" class="en">
 <head>
   <meta charset="UTF-8">
-  <!-- 优化：用JS动态切换标题 -->
-  <title id="pageTitle">你的名字 - 首页</title>
+  <!-- 优化：默认英文标题 -->
+  <title id="pageTitle">Your Name - Home</title>
   <!-- 引入开源字体CDN，确保跨设备显示一致 -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/source-han-sans-cn@2.0.0/source-han-sans-cn.min.css">
@@ -11,7 +11,7 @@
   <!-- 引用共用样式文件 -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="zh">
+<body class="en">
   <!-- 导航栏：名字可跳转首页 + 研究/设计/关于我 + 语言切换按钮 -->
   <nav class="top-nav">
     <div class="container">
@@ -34,10 +34,10 @@
             <span class="nav-en">About Me</span>
           </a>
         </div>
-        <!-- 语言切换按钮 -->
+        <!-- 语言切换按钮：默认英文激活（核心修改） -->
         <div class="lang-switch">
-          <button class="lang-btn active" onclick="switchLang('zh')">中文</button>
-          <button class="lang-btn" onclick="switchLang('en')">English</button>
+          <button class="lang-btn" onclick="switchLang('zh')">中文</button>
+          <button class="lang-btn active" onclick="switchLang('en')">English</button>
         </div>
       </div>
     </div>
@@ -71,7 +71,7 @@
     </div>
   </div>
 
-  <!-- 语言切换JS（新增标题切换） -->
+  <!-- 语言切换JS（默认英文） -->
   <script>
     // 切换语言的核心函数
     function switchLang(lang) {
@@ -96,9 +96,9 @@
       localStorage.setItem('selectedLang', lang);
     }
 
-    // 页面加载时恢复语言和标题
+    // 页面加载时恢复语言和标题（默认英文）
     window.onload = function() {
-      const savedLang = localStorage.getItem('selectedLang') || 'zh';
+      const savedLang = localStorage.getItem('selectedLang') || 'en';
       switchLang(savedLang);
     };
   </script>
