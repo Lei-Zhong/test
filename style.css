@@ -3,7 +3,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "微软雅黑", "思源黑体", Arial, sans-serif;
+  /* 替换为开源思源字体（优先系统思源，无则用后备字体） */
+  font-family: "思源黑体", "Source Han Sans CN", "微软雅黑", Arial, sans-serif;
 }
 
 /* 页面背景+正文居中 */
@@ -47,7 +48,28 @@ body {
 .top-nav .logo {
   font-size: 18px;
   font-weight: bold;
-  margin-left: 0;
+  margin-left: 0; /* 名字链接无左侧间距 */
+}
+
+/* 语言切换按钮样式 */
+.lang-switch {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+}
+.lang-btn {
+  padding: 5px 10px;
+  border: 1px solid white;
+  border-radius: 4px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+.lang-btn.active {
+  background: white;
+  color: rgb(79,177,186);
+  font-weight: bold;
 }
 
 /* 页面内容：避开顶部导航，不被挡住 */
@@ -79,7 +101,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url("https://picsum.photos/1920/1080") no-repeat center center; /* 背景图，可换 */
+  background: url("https://img.picui.cn/free/2025/01/20/678d7d40e1099.jpg") no-repeat center center; /* 固定背景图 */
   background-size: cover;
   color: white;
   text-align: center;
@@ -109,4 +131,34 @@ a {
 .hero .links a:hover {
   background-color: white;
   color: rgb(79,177,186);
+}
+
+/* 首页双语内容控制：默认显示中文，隐藏英文 */
+.zh-content {
+  display: block;
+}
+.en-content {
+  display: none;
+}
+/* 切换到英文时，显示英文，隐藏中文 */
+body.en .zh-content {
+  display: none;
+}
+body.en .en-content {
+  display: block;
+}
+
+/* 导航栏双语文字：默认显示中文，隐藏英文 */
+.nav-zh {
+  display: inline;
+}
+.nav-en {
+  display: none;
+}
+/* 英文模式下，导航显示英文，隐藏中文 */
+body.en .nav-zh {
+  display: none;
+}
+body.en .nav-en {
+  display: inline;
 }
