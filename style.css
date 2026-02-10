@@ -101,10 +101,10 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgb(8,46,57) url("img/test7.jpg") no-repeat center center; /* 固定背景图 */
+  background: rgb(8,46,57) url("https://picsum.photos/seed/yourname/1920/1080") no-repeat center center; /* 固定背景图 */
   background-size: cover;
   /* 无图片时显示的兜底背景色 */
-  background-color: rgb(8,46,57); 
+  background-color: rgb(8,46,57) !important; 
   color: white;
   text-align: center;
 }
