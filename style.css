@@ -3,8 +3,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* 替换为开源思源字体（优先系统思源，无则用后备字体） */
-  font-family: "思源黑体", "Source Han Sans CN", "微软雅黑", Arial, sans-serif;
+  /* 纯开源字体组合：思源黑体(中文)+Source Sans Pro(西文)+思源宋体(备用) */
+  font-family: "思源黑体", "Source Han Sans CN", "Source Sans Pro", "思源宋体", "Source Han Serif CN", sans-serif;
 }
 
 /* 页面背景+正文居中 */
