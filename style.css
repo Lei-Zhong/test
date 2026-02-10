@@ -136,31 +136,32 @@ a {
   color: rgb(79,177,186);
 }
 
-/* 全局双语内容控制：默认显示中文，隐藏英文 */
+/* 全局双语内容控制：默认显示英文，隐藏中文（核心修改） */
 .zh-content {
-  display: block;
+  display: none;
 }
 .en-content {
-  display: none;
-}
-/* 切换到英文时，显示英文，隐藏中文（全局生效） */
-body.en .zh-content {
-  display: none;
-}
-body.en .en-content {
   display: block;
 }
+/* 切换到中文时，显示中文，隐藏英文 */
+body.zh .zh-content {
+  display: block;
+}
+body.zh .en-content {
+  display: none;
+}
 
-/* 导航栏双语文字（兼容旧类名） */
+/* 导航栏双语文字：默认显示英文，隐藏中文（核心修改） */
 .nav-zh {
-  display: inline;
+  display: none;
 }
 .nav-en {
-  display: none;
-}
-body.en .nav-zh {
-  display: none;
-}
-body.en .nav-en {
   display: inline;
+}
+/* 中文模式下，导航显示中文，隐藏英文 */
+body.zh .nav-zh {
+  display: inline;
+}
+body.zh .nav-en {
+  display: none;
 }
