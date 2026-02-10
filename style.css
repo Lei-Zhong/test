@@ -23,7 +23,7 @@ body {
 
 /* 顶部导航栏（Hydejack风格） */
 .top-nav {
-  background-color: rgb(79,177,186); /* Hydejack主色 */
+  background-color: rgb(25,55,71); /* Hydejack主色 */
   color: white;
   padding: 15px 0;
   position: fixed; /* 固定在顶部 */
@@ -68,7 +68,7 @@ body {
 }
 .lang-btn.active {
   background: white;
-  color: rgb(79,177,186);
+  color: rgb(25,55,71);
   font-weight: bold;
 }
 
@@ -92,7 +92,7 @@ h2 {
 
 /* 链接样式 */
 a {
-  color: rgb(79,177,186);
+  color: rgb(25,55,71);
 }
 
 /* 首页hero区域（简洁风，贴近Hydejack首页） */
