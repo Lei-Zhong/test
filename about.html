@@ -2,10 +2,8 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>
-    <span class="zh-content">关于我 - 你的名字</span>
-    <span class="en-content">About Me - Your Name</span>
-  </title>
+  <!-- 修复：用JS动态切换标题 -->
+  <title id="pageTitle">关于我 - 你的名字</title>
   <!-- 引入开源字体CDN -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/source-han-sans-cn@2.0.0/source-han-sans-cn.min.css">
@@ -106,10 +104,19 @@
     </p>
   </div>
 
-  <!-- 复用语言切换JS -->
+  <!-- 复用语言切换JS（新增标题切换） -->
   <script>
     function switchLang(lang) {
+      // 切换页面内容语言
       document.body.className = lang;
+      // 切换页面标题
+      const titleEl = document.getElementById('pageTitle');
+      if (lang === 'zh') {
+        titleEl.innerText = '关于我 - 你的名字';
+      } else {
+        titleEl.innerText = 'About Me - Your Name';
+      }
+      // 切换按钮激活状态
       const btns = document.querySelectorAll('.lang-btn');
       btns.forEach(btn => {
         btn.classList.remove('active');
@@ -117,8 +124,10 @@
           btn.classList.add('active');
         }
       });
+      // 保存语言选择
       localStorage.setItem('selectedLang', lang);
     }
+    // 页面加载时恢复语言和标题
     window.onload = function() {
       const savedLang = localStorage.getItem('selectedLang') || 'zh';
       switchLang(savedLang);
