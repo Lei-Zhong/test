@@ -1,106 +1,249 @@
 <!DOCTYPE html>
-<html lang="en" class="en">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <!-- 优化：默认英文标题 -->
-  <title id="pageTitle">Your Name - Home</title>
-  <!-- 引入开源字体CDN，确保跨设备显示一致 -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/source-han-sans-cn@2.0.0/source-han-sans-cn.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/source-han-serif-cn@2.0.0/source-han-serif-cn.min.css">
-  <!-- 引用共用样式文件 -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body class="en">
-  <!-- 导航栏：名字可跳转首页 + 研究/设计/关于我 + 语言切换按钮 -->
-  <nav class="top-nav">
-    <div class="container">
-      <a href="index.html" class="logo">
-        <span class="nav-zh">你的名字</span>
-        <span class="nav-en">Your Name</span>
-      </a>
-      <div style="display: flex; align-items: center;">
-        <div>
-          <a href="research.html">
-            <span class="nav-zh">研究</span>
-            <span class="nav-en">Research</span>
-          </a>
-          <a href="design.html">
-            <span class="nav-zh">设计</span>
-            <span class="nav-en">Design</span>
-          </a>
-          <a href="about.html">
-            <span class="nav-zh">关于我</span>
-            <span class="nav-en">About Me</span>
-          </a>
-        </div>
-        <!-- 语言切换按钮：默认英文激活（核心修改） -->
-        <div class="lang-switch">
-          <button class="lang-btn" onclick="switchLang('zh')">中文</button>
-          <button class="lang-btn active" onclick="switchLang('en')">English</button>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- 首页核心区域（双语内容） -->
-  <div class="hero">
-    <div class="overlay">
-      <h1>
-        <span class="zh-content">你的名字</span>
-        <span class="en-content">Your Name</span>
-      </h1>
-      <p>
-        <span class="zh-content">一句话简介，比如：研究方向 / 设计领域 / 个人标签</span>
-        <span class="en-content">One-sentence intro: e.g., Research Direction / Design Field / Personal Tag</span>
-      </p>
-      <div class="links" style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; align-items: center;">
-        <a href="mailto:你的邮箱@xxx.com" style="white-space: nowrap;">
-          <span class="zh-content">邮箱</span>
-          <span class="en-content">Email</span>
-        </a>
-        <a href="https://linkedin.com/in/你的领英" style="white-space: nowrap;">
-          <span class="zh-content">领英</span>
-          <span class="en-content">LinkedIn</span>
-        </a>
-        <a href="https://github.com/你的用户名" style="white-space: nowrap;">
-          <span class="zh-content">GitHub</span>
-          <span class="en-content">GitHub</span>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 语言切换JS（默认英文） -->
-  <script>
-    // 切换语言的核心函数
-    function switchLang(lang) {
-      // 切换页面内容语言
-      document.body.className = lang;
-      // 切换页面标题
-      const titleEl = document.getElementById('pageTitle');
-      if (lang === 'zh') {
-        titleEl.innerText = '你的名字 - 首页';
-      } else {
-        titleEl.innerText = 'Your Name - Home';
-      }
-      // 切换按钮激活状态
-      const btns = document.querySelectorAll('.lang-btn');
-      btns.forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.innerText === (lang === 'zh' ? '中文' : 'English')) {
-          btn.classList.add('active');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Libre+Baskerville:wght@400;700&family=Karla:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #1a2f3a;
+            --primary-mid: #2d4a56;
+            --primary-light: #3d5f6d;
+            --accent-teal: #4a7c7e;
+            --accent-sage: #6b8e7f;
+            --text-light: #e8f0f2;
+            --text-dim: #b0c4c9;
         }
-      });
-      // 保存语言选择到本地
-      localStorage.setItem('selectedLang', lang);
-    }
 
-    // 页面加载时恢复语言和标题（默认英文）
-    window.onload = function() {
-      const savedLang = localStorage.getItem('selectedLang') || 'en';
-      switchLang(savedLang);
-    };
-  </script>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Karla', sans-serif;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-mid) 100%);
+            color: var(--text-light);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(74, 124, 126, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(107, 142, 127, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 40px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 120px;
+            opacity: 0;
+            animation: fadeInDown 1s ease forwards;
+        }
+
+        h1 {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 4.5rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+
+        .subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--text-dim);
+            font-style: italic;
+        }
+
+        .sections {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-card {
+            position: relative;
+            padding: 60px 40px;
+            background: rgba(45, 74, 86, 0.3);
+            border: 1px solid rgba(232, 240, 242, 0.1);
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(30px);
+            text-decoration: none;
+            display: block;
+            overflow: hidden;
+        }
+
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(74, 124, 126, 0.15) 100%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .section-card:hover::before {
+            opacity: 1;
+        }
+
+        .section-card:nth-child(1) {
+            animation: fadeInUp 0.8s ease forwards 0.3s;
+        }
+
+        .section-card:nth-child(2) {
+            animation: fadeInUp 0.8s ease forwards 0.5s;
+        }
+
+        .section-card:nth-child(3) {
+            animation: fadeInUp 0.8s ease forwards 0.7s;
+        }
+
+        .section-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(74, 124, 126, 0.4);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 5rem;
+            font-weight: 300;
+            color: rgba(232, 240, 242, 0.1);
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            line-height: 1;
+        }
+
+        .section-title {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-light);
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-description {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-dim);
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-arrow {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            width: 40px;
+            height: 40px;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.4s ease;
+        }
+
+        .section-card:hover .section-arrow {
+            opacity: 0.6;
+            transform: translateX(0);
+        }
+
+        .section-arrow svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--text-light);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .sections {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome</h1>
+            <p class="subtitle">Explore the intersections of inquiry, creation, and reflection</p>
+        </header>
+
+        <div class="sections">
+            <a href="research.html" class="section-card">
+                <span class="section-number">01</span>
+                <h2 class="section-title">Research</h2>
+                <p class="section-description">Academic pursuits, scholarly investigations, and theoretical explorations that push the boundaries of understanding.</p>
+                <div class="section-arrow">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
