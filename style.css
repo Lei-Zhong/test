@@ -101,8 +101,10 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url("https://img.picui.cn/free/2025/01/20/678d7d40e1099.jpg") no-repeat center center; /* 固定背景图 */
+  background: rgb(8,46,57) url("img/test7.jpg") no-repeat center center; /* 固定背景图 */
   background-size: cover;
+  /* 无图片时显示的兜底背景色 */
+  background-color: rgb(8,46,57); 
   color: white;
   text-align: center;
 }
