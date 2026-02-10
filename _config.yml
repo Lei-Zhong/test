@@ -1,7 +1,0 @@
-# 禁用自动插入默认内容的插件（或调整配置）
-jekyll_readme_index:
-  remove_originals: false
-  with_frontmatter: false
-
-# 新增：关闭GitHub Pages的默认提示
-github: [metadata]
