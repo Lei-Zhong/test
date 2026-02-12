@@ -52,13 +52,20 @@
             padding: 25px 60px;
         }
 
-        .nav-links {
+        .nav-left {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .nav-right {
             display: flex;
             gap: 50px;
             list-style: none;
         }
 
-        .nav-links a {
+        .nav-right a {
             font-family: 'Crimson Text', serif;
             font-size: 1.1rem;
             color: var(--text-dim);
@@ -67,7 +74,7 @@
             position: relative;
         }
 
-        .nav-links a::after {
+        .nav-right a::after {
             content: '';
             position: absolute;
             bottom: -5px;
@@ -78,13 +85,13 @@
             transition: width 0.3s ease;
         }
 
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
+        .nav-right a:hover::after,
+        .nav-right a.active::after {
             width: 100%;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
+        .nav-right a:hover,
+        .nav-right a.active {
             color: var(--text-light);
         }
 
@@ -203,6 +210,40 @@
             line-height: 1.6;
         }
 
+        .works-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .works-list li {
+            background: var(--bg-card);
+            border: 1px solid rgba(232, 240, 242, 0.08);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 3px;
+            border-left: 3px solid var(--accent-teal);
+        }
+
+        .work-title {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .work-meta {
+            font-size: 0.95rem;
+            color: var(--accent-sage);
+            margin-bottom: 10px;
+        }
+
+        .work-description {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--text-dim);
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -219,7 +260,7 @@
                 padding: 20px 30px;
             }
 
-            .nav-links {
+            .nav-right {
                 gap: 25px;
                 font-size: 0.95rem;
             }
@@ -237,7 +278,8 @@
 <body>
     <nav>
         <div class="nav-content">
-            <ul class="nav-links">
+            <div class="nav-left">Research</div>
+            <ul class="nav-right">
                 <li><a href="research.html" class="active">About</a></li>
                 <li><a href="index.html">More</a></li>
             </ul>
@@ -286,6 +328,33 @@
                     <div class="interest-description">Translating theoretical insights into practical solutions for real-world challenges and contexts.</div>
                 </div>
             </div>
+        </section>
+
+        <section>
+            <h2>Related Works</h2>
+            <ul class="works-list">
+                <li>
+                    <div class="work-title">Dynamics of Emergent Behavior in Complex Networks</div>
+                    <div class="work-meta">Doctoral Research | 2024 - Present</div>
+                    <div class="work-description">
+                        This ongoing doctoral research investigates the fundamental mechanisms through which collective behaviors emerge in complex adaptive systems. Using computational modeling and theoretical analysis, the work explores how local interactions scale to produce system-wide patterns.
+                    </div>
+                </li>
+                <li>
+                    <div class="work-title">Theoretical Frameworks for Understanding Adaptive Systems</div>
+                    <div class="work-meta">Master's Thesis | 2022 - 2024</div>
+                    <div class="work-description">
+                        Developed a novel theoretical framework for analyzing adaptive behaviors in dynamic environments. The research synthesized insights from multiple disciplines to propose new approaches for understanding how systems respond to changing conditions.
+                    </div>
+                </li>
+                <li>
+                    <div class="work-title">Pattern Formation and Self-Organization</div>
+                    <div class="work-meta">Undergraduate Research | 2018 - 2019</div>
+                    <div class="work-description">
+                        Conducted independent research exploring foundational questions about pattern formation and self-organization. This early research experience sparked continued interest in complex systems and laid the groundwork for future graduate studies.
+                    </div>
+                </li>
+            </ul>
         </section>
     </main>
 </body>
