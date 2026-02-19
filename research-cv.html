@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research - CV</title>
+    <title>CV - Micky</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Libre+Baskerville:wght@400;700&family=Crimson+Text:wght@400;600&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -40,6 +40,7 @@
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(232, 240, 242, 0.1);
             z-index: 1000;
+            padding: 0;
         }
 
         .nav-content {
@@ -51,13 +52,20 @@
             padding: 25px 60px;
         }
 
-        .nav-links {
+        .nav-left {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-light);
+        }
+
+        .nav-right {
             display: flex;
             gap: 50px;
             list-style: none;
         }
 
-        .nav-links a {
+        .nav-right a {
             font-family: 'Crimson Text', serif;
             font-size: 1.1rem;
             color: var(--text-dim);
@@ -66,7 +74,7 @@
             position: relative;
         }
 
-        .nav-links a::after {
+        .nav-right a::after {
             content: '';
             position: absolute;
             bottom: -5px;
@@ -77,13 +85,13 @@
             transition: width 0.3s ease;
         }
 
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
+        .nav-right a:hover::after,
+        .nav-right a.active::after {
             width: 100%;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
+        .nav-right a:hover,
+        .nav-right a.active {
             color: var(--text-light);
         }
 
@@ -102,7 +110,7 @@
 
         h1 {
             font-family: 'Libre Baskerville', serif;
-            font-size: 2.8rem;
+            font-size: 3rem;
             font-weight: 400;
             margin-bottom: 15px;
             letter-spacing: -0.01em;
@@ -118,10 +126,11 @@
         .cv-contact {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 15px;
             margin-top: 20px;
             font-size: 0.95rem;
             color: var(--text-dim);
+            align-items: center;
         }
 
         .cv-contact a {
@@ -135,7 +144,7 @@
         }
 
         section {
-            margin-bottom: 50px;
+            margin-bottom: 60px;
             opacity: 0;
             animation: fadeIn 1s ease forwards;
         }
@@ -144,13 +153,12 @@
         section:nth-child(3) { animation-delay: 0.3s; }
         section:nth-child(4) { animation-delay: 0.4s; }
         section:nth-child(5) { animation-delay: 0.5s; }
-        section:nth-child(6) { animation-delay: 0.6s; }
 
         h2 {
             font-family: 'Crimson Text', serif;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 600;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             color: var(--accent-sage);
             border-bottom: 1px solid rgba(232, 240, 242, 0.15);
             padding-bottom: 10px;
@@ -239,28 +247,15 @@
             line-height: 1.6;
         }
 
-        .download-cv {
+        footer {
             text-align: center;
+            padding: 40px 0 20px;
             margin-top: 60px;
-        }
-
-        .download-btn {
-            display: inline-block;
-            padding: 15px 40px;
-            background: rgba(74, 124, 126, 0.2);
-            border: 1px solid var(--accent-teal);
-            border-radius: 3px;
-            color: var(--text-light);
-            text-decoration: none;
-            font-family: 'Crimson Text', serif;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-
-        .download-btn:hover {
-            background: rgba(74, 124, 126, 0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            border-top: 1px solid rgba(232, 240, 242, 0.1);
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            opacity: 0;
+            animation: fadeIn 1s ease forwards 0.6s;
         }
 
         @keyframes fadeIn {
@@ -279,9 +274,8 @@
                 padding: 20px 30px;
             }
 
-            .nav-links {
-                gap: 20px;
-                font-size: 0.95rem;
+            .nav-right {
+                gap: 25px;
             }
 
             .cv-item-header {
@@ -291,22 +285,15 @@
             .skills-grid {
                 grid-template-columns: 1fr;
             }
-
-            .cv-contact {
-                flex-direction: column;
-                gap: 10px;
-            }
         }
     </style>
 </head>
 <body>
     <nav>
         <div class="nav-content">
-            <ul class="nav-links">
+            <div class="nav-left">Research</div>
+            <ul class="nav-right">
                 <li><a href="research.html">About</a></li>
-                <li><a href="research-experience.html">Experience</a></li>
-                <li><a href="research-exploration.html">Exploration</a></li>
-                <li><a href="research-cv.html" class="active">CV</a></li>
                 <li><a href="index.html">More</a></li>
             </ul>
         </div>
@@ -314,19 +301,18 @@
 
     <main>
         <div class="cv-header">
-            <h1>Your Name</h1>
-            <p class="cv-subtitle">Researcher & Scholar</p>
+            <h1>Lei Zhong</h1>
+            <p class="cv-subtitle">MSc in Hydro Science and Engineering</p>
+            <p class="cv-subtitle">BE in Landscape Architecture</p>
             <div class="cv-contact">
-                <span>email@university.edu</span>
+                <span>L-zhong@outlook.com</span>
                 <span>•</span>
-                <a href="#">LinkedIn</a>
-                <span>•</span>
-                <a href="#">Google Scholar</a>
+                <a href="https://www.linkedin.com/in/leizhong03/" target="_blank">LinkedIn</a>
             </div>
         </div>
 
         <section>
-            <h2>Education</h2>
+            <h2>Education Background</h2>
             <div class="cv-item">
                 <div class="cv-item-header">
                     <div class="cv-item-title">Ph.D. in [Your Field]</div>
@@ -354,49 +340,47 @@
         </section>
 
         <section>
-            <h2>Publications</h2>
+            <h2>Work Experience</h2>
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <div class="cv-item-title">Research Assistant</div>
+                    <div class="cv-item-date">2023 - Present</div>
+                </div>
+                <div class="cv-item-subtitle">Institution Name / Lab Name</div>
+                <div class="cv-item-description">
+                    Conducting research on [specific topic], contributing to data analysis, experimental design, and publication of research findings. Collaborating with interdisciplinary teams on grant-funded projects.
+                </div>
+            </div>
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <div class="cv-item-title">Teaching Assistant</div>
+                    <div class="cv-item-date">2022 - 2023</div>
+                </div>
+                <div class="cv-item-subtitle">University Name, Department Name</div>
+                <div class="cv-item-description">
+                    Assisted in teaching undergraduate courses, held office hours, graded assignments, and mentored students in research methods and analytical techniques.
+                </div>
+            </div>
+            <div class="cv-item">
+                <div class="cv-item-header">
+                    <div class="cv-item-title">Research Intern</div>
+                    <div class="cv-item-date">Summer 2021</div>
+                </div>
+                <div class="cv-item-subtitle">Organization Name</div>
+                <div class="cv-item-description">
+                    Participated in summer research program focused on [specific area]. Conducted literature reviews, collected and analyzed data, and presented findings to research team.
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Research</h2>
             <ul class="publication-list">
                 <li>Author Name, Co-Author Name (2024). "Title of Recent Paper on Complex Systems." <em>Journal of Complex Systems Research</em>, 15(3), 234-256.</li>
                 <li>Author Name, Co-Author Name, Another Co-Author (2023). "Theoretical Framework for Understanding Adaptive Behaviors." <em>Proceedings of the International Conference on Systems Science</em>, 789-803.</li>
                 <li>Author Name (2023). "Network Topology and Emergent Phenomena: A Review." <em>Annual Review of Systems Theory</em>, 8, 45-72.</li>
                 <li>Author Name, Co-Author Name (2022). "Investigating Self-Organization in Multi-Agent Systems." <em>Journal of Theoretical Research</em>, 42(2), 123-145.</li>
             </ul>
-        </section>
-
-        <section>
-            <h2>Presentations</h2>
-            <div class="cv-item">
-                <div class="cv-item-header">
-                    <div class="cv-item-title">"Emergent Behavior in Complex Networks"</div>
-                    <div class="cv-item-date">Oct 2024</div>
-                </div>
-                <div class="cv-item-subtitle">International Conference on Complex Systems, Boston, MA</div>
-            </div>
-            <div class="cv-item">
-                <div class="cv-item-header">
-                    <div class="cv-item-title">"Adaptive Strategies in Dynamic Environments"</div>
-                    <div class="cv-item-date">Mar 2024</div>
-                </div>
-                <div class="cv-item-subtitle">Graduate Research Symposium, University Name</div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Awards & Honors</h2>
-            <div class="cv-item">
-                <div class="cv-item-header">
-                    <div class="cv-item-title">Graduate Research Fellowship</div>
-                    <div class="cv-item-date">2023</div>
-                </div>
-                <div class="cv-item-subtitle">National Science Foundation</div>
-            </div>
-            <div class="cv-item">
-                <div class="cv-item-header">
-                    <div class="cv-item-title">Best Paper Award</div>
-                    <div class="cv-item-date">2023</div>
-                </div>
-                <div class="cv-item-subtitle">International Conference on Systems Science</div>
-            </div>
         </section>
 
         <section>
@@ -428,10 +412,10 @@
                 </div>
             </div>
         </section>
-
-        <div class="download-cv">
-            <a href="#" class="download-btn">Download Full CV (PDF)</a>
-        </div>
     </main>
+
+    <footer>
+        © 2026 Lei Zhong. All rights reserved.
+    </footer>
 </body>
 </html>
